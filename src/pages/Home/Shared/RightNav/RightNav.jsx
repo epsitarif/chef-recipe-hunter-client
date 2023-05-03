@@ -6,24 +6,19 @@ const RightNav = () => {
   const [chefData, setChefData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/allData")
+    fetch("https://chef-recipe-hunter-server-epsitarif.vercel.app/allData")
       .then((response) => response.json())
       .then((data) => setChefData(data.chef));
-
-    }, []);
-    //console.log(chefData);
-
+  }, []);
+  //console.log(chefData);
 
   return (
-        
-        <div className="chef">
-
-            {
-            chefData.map(data=> <SingleCard data={data}></SingleCard> )
-        }
-        </div>
+    <div className="chef">
+      {chefData.map((data) => (
+        <SingleCard data={data}></SingleCard>
+      ))}
+    </div>
   );
-}
-
+};
 
 export default RightNav;

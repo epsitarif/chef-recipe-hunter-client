@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import './ViewRecipes.css'
+import "./ViewRecipes.css";
 
 const ViewRecipe = () => {
   const [recipes, setRecipes] = useState([]);
@@ -8,7 +8,9 @@ const ViewRecipe = () => {
   const chefData = useLoaderData();
   console.log(chefData);
   useEffect(() => {
-    fetch(`http://localhost:5000/recipe/${chefData._id}`)
+    fetch(
+      `https://chef-recipe-hunter-server-epsitarif.vercel.app/recipe/${chefData._id}`
+    )
       .then((res) => res.json())
       .then((data) => setRecipes(data));
   }, []);
@@ -42,7 +44,12 @@ const ViewRecipe = () => {
       <div className="food">
         {recipes.map((recipe) => (
           <div key={recipe.id}>
-            <img className='w-75' style={{ height: '200px' }} src={recipe.image_url} alt="" /> 
+            <img
+              className="w-75"
+              style={{ height: "200px" }}
+              src={recipe.image_url}
+              alt=""
+            />
             <h2>{recipe.recipe_name}</h2>
             <h6>Ingredients: {recipe.ingredients}</h6>
             <p>Method: {recipe.cooking_method}</p>
