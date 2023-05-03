@@ -5,7 +5,7 @@ import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const SingleCard = (props) => {
-    console.log(props)
+    //console.log(props)
     const {_id, name, picture, years_of_experience, number_of_recipes, likes} = props.data
     return (
         <div className='w-100 mt-5'>

@@ -12,7 +12,7 @@ const ViewRecipe = () => {
       .then((res) => res.json())
       .then((data) => setRecipes(data));
   }, []);
-  console.log(recipes);
+  //console.log(recipes);
   const {
     _id,
     name,

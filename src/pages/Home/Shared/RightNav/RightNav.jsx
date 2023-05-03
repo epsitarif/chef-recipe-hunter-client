@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button, Card } from "react-bootstrap";
 import SingleCard from "../../../../SingleCard/SingleCard";
-import { key } from "localforage";
 
 const RightNav = () => {
   const [chefData, setChefData] = useState([]);
